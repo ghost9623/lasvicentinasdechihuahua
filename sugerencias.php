@@ -44,6 +44,10 @@
                       <a class="nav-link" href="historia.html">Historia</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" href="noticias.php">Noticias</a>
+                    </li>
+
+                    <li class="nav-item">
                       <a class="nav-link" href="sugerencias.php">sugerencias</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -122,14 +126,25 @@
 
 
     </section>
+    <section class="sidebar">
+           
+           <h2 class="encabezado-sidebar">Categorias</h2>
+           <section class="categorias">
+            <a href="" class="enlace-sidebar">pagina 1</a>
+            <a href=""class="enlace-sidebar">pagina 2</a>
+            <a href="" class="enlace-sidebar">pagina 3</a>
+           </section>
 
-    <aside class="cuatro  rounded">
-        <blockquote cite="">
-            
-        </blockquote>
+       
+   
+           <h2 class="encabezado-sidebar">Sitios Amigos</h2>
+            <section class="amigos">
+            <a href=""class="enlace-sidebar">pagina 1</a>
+            <a href="" class="enlace-sidebar">pagina 2</a>
+            <a href="" class="enlace-sidebar">pagina 3</a>
+           </section>
 
-        
-    </aside>
+       </section>
     <footer class="pie  rounded">
     <p>Las vicentinas de chihuahua 2020 © Todos los Derechos Reservados</p>
         <a href="https://web.whatsapp.com/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAABAUlEQVRYhe3WXQ2DMBSG4VcCEiYBCZWAhCNhEupgOBiONgl1UBywi9KELBRK1h+S8SXnjsBDOZwWrlzJnwZoayN8FGCBCbjXpYDgIMuSWph+BVMNJRsYX0V7SkeAbElUDKgoSiJBE/DCjYWsUQdARfqpOYAZcmN8zJkwsD2HimMAujNhfEwAVG2j1QFQXwvUAOMKyAK3yHu0JJ5TegXkB+JehsW1ST+zCaCeEZgs20wbAPm3v+1gsqBkA2WBx/ywEGZZkgq1NyyP1ClRyc7okhCVrKcU8P4RM5LhLKVZH54xpVJjfJoZZg5gJBfmOx3u19/CVd0LFW419FxSC3Plf/IBexkYhFL15N4AAAAASUVORK5CYII="/></a>
