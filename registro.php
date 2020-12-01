@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registro de noticia</title>
+	<title>Registro de avisos</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/registro.css">
     <script type="text/javascript"></script>
-
+    <link rel="shortcut icon" type="image/x-icon" href="imagenes/Las Vicentinas de Chihuahua.ico" />  
 </head>
 
 <body>
 
 
-<center><h1>Registro</h1></center>
+<center><h1>Registro de avisos</h1></center>
 <div id="uno">
 	
     <center>
@@ -53,7 +53,7 @@
 
                 $conn1=mysqli_connect($hostname,$username,$password,$database);
                 
-                $sql="insert into notcias VALUES('null','".$_nombre."','".$_sug."','".$_embebido."','".$_categoria."','".$_fechalarga."','".$_fechacorta."','". $_hora."','".$_estado."')";
+                $sql="call insertavisos('".$_nombre."','".$_sug."','".$_embebido."','".$_categoria."','".$_fechalarga."','".$_fechacorta."','". $_hora."','".$_estado."')";
                 
                 if (mysqli_query($conn1,$sql)) 
                 {

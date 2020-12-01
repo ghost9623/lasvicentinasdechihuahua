@@ -12,7 +12,7 @@
     <script src="funcion.js"></script> 
     <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/Las Vicentinas de Chihuahua.ico" />  
-    <title>Galeria</title>
+    <title>Administrador</title>
 </head>
 <body>
     
@@ -51,43 +51,103 @@
                   <a class="nav-link" href="sugerencias.php">Sugerencias</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="login.php">Empleados</a>
+                  <a class="nav-link" href="login.html">Empleados</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Productos
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="productos.html">Pasteles</a>
-                    
-                    <a class="dropdown-item" href="productos.html">reposteria</a>
-                  </div>
-                </li>
+                
               </ul>
             </div>
           </nav>
      </header>
     
-
-    <section class="tres">
+     <nav class="nav">
+   <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="productos.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Empleados
+        </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="registroempleado.php">Registro</a>
+              <a class="dropdown-item" href="actualizarempleado.php">Actualizacion de datos</a>
+              <a class="dropdown-item" href="deleteempleado.php">Eliminacion </a>
+            </div>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="productos.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Productos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="registroproductos.php">Registro</a>
+              <a class="dropdown-item" href="actualizarproducto.php">Actualizacion de datos</a>
+              <a class="dropdown-item" href="deleteproducto.php">Eliminacion </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="productos.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Avisos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="registro.php">Registro</a>
+              
+          </li>
+ 
+  
+</nav>   
+    <section>
       
-    <form   name="f1">
-   <h1><center>Galeria</center></h1>
-        
-         <img src="foto1.jpg" alt="" id="foto" width="1000" height="1000">
-        <input type="button" value="Anterior" onclick="anterior()">
-        <input type="button" value="Siguiente" onclick="adelante()">
-    </form>
-    
+    <?php
+       $hostname='localhost';
+       $database='lasvicentinas';
+       $username='admin';
+       $password='root';
+
+       $conn1=mysqli_connect($hostname,$username,$password,$database);
+       $sql="select*from sugerencias";
+       $res=mysqli_query($conn1,$sql);
+      
+       while($noticias =mysqli_fetch_array($res))
+       {
+     ?>
+
+        <section > 
+          <article class="post">
+             
+          <a href="" class="enlace-post">
+              <h2 class="titulo-post"><?php echo $noticias['nombre'] ?></h2>
+            </a>
+            
+            <p>
+            
+              
+               <strong>correo</strong><span class="datos-publicaciones"><?php echo $noticias['correo'] ?></span>
+               <strong>telefono</strong><span class="datos-publicaciones"><?php echo $noticias['telefono'] ?></span>
+               
+            </p>
+             <p class="parrafo-post">
+             <?php echo $noticias['sugerencias'] ?>
+             
+            </p>
+           
+          </article>
+          <div class="paginacion">
+
+          
+  
+          
+         
+       </section>
+       
+      <?php }
+      
+      ?>
+       
+       
+
 
       
 
     </section>
 
-    <aside class="cuatro">
-        
-       
-    </aside>
+    
     <footer class="pie rounded">
         <p>las vicentinas de chihuahua 2020 © Todos los Derechos Reservados</p>
             <a href="https://web.whatsapp.com/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAABAUlEQVRYhe3WXQ2DMBSG4VcCEiYBCZWAhCNhEupgOBiONgl1UBywi9KELBRK1h+S8SXnjsBDOZwWrlzJnwZoayN8FGCBCbjXpYDgIMuSWph+BVMNJRsYX0V7SkeAbElUDKgoSiJBE/DCjYWsUQdARfqpOYAZcmN8zJkwsD2HimMAujNhfEwAVG2j1QFQXwvUAOMKyAK3yHu0JJ5TegXkB+JehsW1ST+zCaCeEZgs20wbAPm3v+1gsqBkA2WBx/ywEGZZkgq1NyyP1ClRyc7okhCVrKcU8P4RM5LhLKVZH54xpVJjfJoZZg5gJBfmOx3u19/CVd0LFW419FxSC3Plf/IBexkYhFL15N4AAAAASUVORK5CYII="/></a>

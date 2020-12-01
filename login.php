@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
     <script src="funcion.js"></script> 
     <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/Las Vicentinas de Chihuahua.ico" />  
-    <title>Galeria</title>
+    <title>Empleados </title>
 </head>
 <body>
     
@@ -69,25 +72,34 @@
      </header>
     
 
-    <section class="tres">
-      
-    <form   name="f1">
-   <h1><center>Galeria</center></h1>
+     <section class=" rounded img-responsive">
         
-         <img src="foto1.jpg" alt="" id="foto" width="1000" height="1000">
-        <input type="button" value="Anterior" onclick="anterior()">
-        <input type="button" value="Siguiente" onclick="adelante()">
-    </form>
+        <article class="rounded">
+            <center>
+                <img src="imagenes/black_avatar_1.svg" alt="" width="300" height="300">
+            </center>
+
+            <form action="checarusuario.php" method="POST">
+                <p><label>Usuario : &nbsp</label><input type="text" name="usuario" placeholder="Escribe su Usuario" required=""></p>
+                <p><label>estado : &nbsp</label><input type="password" name="contraseña" placeholder="Escribe su contraseña" required=""></p>
+                <br>
+            <input type="submit" value="ENVIAR" name ="envio">
+            </form>
+          
+
+
+
+        </article>
     
-
-      
-
-    </section>
-
-    <aside class="cuatro">
-        
        
-    </aside>
+ 
+     
+  </section>
+
+  
+  
+
+
     <footer class="pie rounded">
         <p>las vicentinas de chihuahua 2020 © Todos los Derechos Reservados</p>
             <a href="https://web.whatsapp.com/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAABAUlEQVRYhe3WXQ2DMBSG4VcCEiYBCZWAhCNhEupgOBiONgl1UBywi9KELBRK1h+S8SXnjsBDOZwWrlzJnwZoayN8FGCBCbjXpYDgIMuSWph+BVMNJRsYX0V7SkeAbElUDKgoSiJBE/DCjYWsUQdARfqpOYAZcmN8zJkwsD2HimMAujNhfEwAVG2j1QFQXwvUAOMKyAK3yHu0JJ5TegXkB+JehsW1ST+zCaCeEZgs20wbAPm3v+1gsqBkA2WBx/ywEGZZkgq1NyyP1ClRyc7okhCVrKcU8P4RM5LhLKVZH54xpVJjfJoZZg5gJBfmOx3u19/CVd0LFW419FxSC3Plf/IBexkYhFL15N4AAAAASUVORK5CYII="/></a>

@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="javascript/funciones.js"></script> 
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/Las Vicentinas de Chihuahua.ico" />  
-    <title>sugerencia</title>
+    <title>Otros productos</title>
 </head>
 <body>
 
@@ -54,7 +54,7 @@
                       <a class="nav-link" href="sugerencias.php">Sugerencias</a>
                     </li>
                     <li class="nav-item">
-                     <a class="nav-link" href="login.php">Empleados</a>
+                    <a class="nav-link" href="login.php">Empleados</a>
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,60 +73,41 @@
     
     <section class="tres  rounded">
        <article class="rounded">
-           <h1>cuentanos  tu opinion </h1>
+       </table> <table class="table table-dark">
+  <thead>
+    <tr>
+     
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+     
+    </tr>
+  </thead>
+  <tbody>
 
+  <?php
+       $hostname='localhost';
+       $database='lasvicentinas';
+       $username='admin';
+       $password='root';
 
-
-           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"  onsubmit="myFunction()" >
-
-            <label for="nom">Nombre</label>
-            <input type="text" name="nombre" placeholder="Nombre" required>
-            <br>
-            <br>
-            <label for="ema">Email</label>
-            <input type="email" name="email" placeholder="Email" required>
-            <br>
-            <br>
-            <label for="telefo">Telefono</label>
-            <input type="text" name="telefono" placeholder="Telefono" required>
-            <br>
-            <br>
-            <label for="suge">Sugerencias</label>
-             <textarea placeholder="Mensaje" name ="sug" required></textarea>
-            <br>
-            <br>
-            <input type="submit" value="ENVIAR" name ="envio">
-           </form>
-           
-           <?php
-             if(isset($_POST['envio'])){
-                $hostname='localhost';
-                $database='lasvicentinas';
-                $username='admin';
-                $password='root';
-               
-                $_nombre=$_POST['nombre'];
-                $_email=$_POST['email'];
-                $_telefono=$_POST['telefono'];
-                $_sug=$_POST['sug'];
-
-
-                $conn1=mysqli_connect($hostname,$username,$password,$database);
-                
-                $sql="Call insersuger('".$_nombre."','".$_email."','".$_telefono."','".$_sug."')";
-                
-                if (mysqli_query($conn1,$sql)) 
-                {
-                     
-                    
-                      
-                }
-    
-                
-
-            }     
-?>
-
+       $conn1=mysqli_connect($hostname,$username,$password,$database);
+       $sql="select * FROM producto;";
+       $res=mysqli_query($conn1,$sql);
+      
+       while($producto =mysqli_fetch_array($res))
+       {
+     ?>
+    <tr>
+      
+      <td><?php echo $producto ['nombre'] ?></td>
+      <td><?php echo $producto ['precio'] ?></td>
+     
+    </tr>
+    <?php }
+      
+      ?>
+  </tbody>
+</table>
            
        </article>
 
@@ -137,8 +118,8 @@
            <h2 class="encabezado-sidebar">Categorias</h2>
            <section class="categorias">
            <a href="Pasteles.php" class="enlace-sidebar">Pasteles</a>
+        <a href="Otros.php"class="enlace-sidebar">Reposteria y Otros productos</a>
             
-            <a href="Otros.php" class="enlace-sidebar">Reposteria y Otros productos</a>
            </section>
 
        
